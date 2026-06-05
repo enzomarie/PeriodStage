@@ -17,3 +17,5 @@ De ce que je comprend, ce que doit faire sur :
 **Ontologie :** Essayer d'organiser les données, de les structurer et de faire du lien entre elles, surtout dans les différentes langues et dans les différentes sources.Il y a très peu de sources( 65/500 utilisent broader, donc 13 %) qui se font chier à mettre du lien entre les différentes périodes. Mettre donc du lien aussi entre les ressources intra-source et inter-source. 
 
 *Questions soulevés :* Faut-il supprimer certains triplets car ils sont redondants, ou juste faire en sorte que les triplets identiques soient "identifié" commme identique ? 
+
+
