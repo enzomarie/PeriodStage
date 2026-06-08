@@ -1,6 +1,4 @@
-# Analyse et Schématisation des représentations des périodes historiques
-
-## Analyse du réel
+# Analyse des représentations des périodes historiques
 
 ### Schématisation PeriodO
 
@@ -19,3 +17,13 @@ Ce que Wikidata a en plus aussi c’est la modélisation continue, c’est à di
 Les deux ontologies possèdent des notions d’incertitude par rapport aux intervalles de temps d’une période historique. 
 
 La lisibilité et la compréhension de WikData est atroce et impossible. Il n’y a pas d’explication lié aux périodes historiques, et on permet également à des instances de périodes historique d’ajouter certaines propriétés, sachant que la propriété d’instanciation n’impose rien quand aux nécessités qu’une période historique doit avoir.
+
+### OWL-Time
+
+Cette ontologie permet de modéliser vraiment la temporalité d’une manière assez exhaustive. Il y a trois grandes famille de classe pour moi : les **durées**, les **intervalles**, les **instants** . Un durée est juste une indication sur la durée d’un événement, sans aucune position temporelle. C’est sans doute bien de le couplet avec des intervalles pour représenter le flou d’une période. Les intervalles sont modélisée par *ProperInterval*, qui est un intervalle d’une durée > 0. Mais ce qui est pas mal avec ça c’est que un algèbre (d’Allen) est disponible dessus, où l’on permet de situer relativement une période avec une autre, ce qui est très important. Quand aux *Instants*, ils représentent des points temporels (sans durée), qui repose sur un SRT (système de référence temporel, par défaut le calendrier grégorien, mais que l’on peut changer dans pas mal de système différent), et cela permet de représenter (par *DateTimeDescription* souvent) un instant dans l’histoire. Même si, dans le pragmatisme mathématique, un instant est toujours un intervalle (car le temps est continue), notre utilisation permet de bien distinguer les deux. 
+
+### Intégration par rapport à l’article
+
+Le problème avec nos représentations, ce sont bien sûr l’absence d’incertitude ou de flou. Dans certaines périodisations, comme une périodisation en rapport avec l’économie, la technologie, ou d’autres fait qui se répandent dans le temps. Owl-time et donc WikiData et PeriodO modélisent le flou avec un intervalle, mais cette intervalle à aussi un début et une fin (des instants du coup). Ce qui veut dire que il y a encore une barrière brute entre avant cette intervalle, et après le début de l’intervalle. Or ce que l’article décrit, c’est que les “dates” peuvent n’être uniquement des consensus d’historiens, qui représentent le changements mais qui n’est pas réellement le jour “où tout a basculé). La notion de continuité peut être importante, et une modélisation probabiliste ou fonctionnelle peut être vraiment bien ici, pou r représenter l’intensité du changement.
+
+Ce que l’article explique aussi, c’est la pluralité de définitions ou de différence que peut avoir un période même ou un terme historique, qui peut différer en fonction du lieu où cela se trouve ou même juste des débats entre historiens qui sont pas d’accord. Pour ce cas-ci, un mélange entre WikiData et PeriodO est nécessaire, car PeriodO apporte énormément de redondance et parfois de logique un peu foireuse, par le manque de lien entre les différentes sources d’informations, et WikiData englobe tout sous le même “terme”, donc supprime la notion de désaccord. Ainsi le mieux serait de trouver un entre deux, peut-être qui regroupe une notion en une même entité, mais donc que l’on peut faire de la multi-définition (et qui doit englober un certain nombre de chose, avec du shacl).
